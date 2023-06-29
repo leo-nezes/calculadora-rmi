@@ -1,13 +1,11 @@
 public class NumeroImpl implements Numero {
+  private double num;
 
-    private double num;
+  public NumeroImpl (double val) {
+    num = val;
+  }
 
-    public NumeroImpl (double val) {
-        num = val;
-    }
-
-    public double getValor() {
-        return num;
-    }
-
+  public double getValor() {
+    return num;
+  }
 }

@@ -1,2 +1,1 @@
-public class DivisaoPorZeroException extends RuntimeException {
-}
+public class DivisaoPorZeroException extends RuntimeException {}
