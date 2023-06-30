@@ -1,3 +1,4 @@
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -22,23 +23,23 @@ public class CalculadoraImpl implements Calculadora {
     return new NumeroImpl (a.getValor() / b.getValor());
   };
 
-  public Numero potenciar(Numero base, Numero expoente) throws DivisaoPorZeroException {
+  public Numero potenciar(Numero base, Numero expoente) throws RemoteException {
     return new NumeroImpl (Math.pow(base.getValor(), expoente.getValor()));
   };
 
-  public Numero valorAbsoluto(Numero numero) throws DivisaoPorZeroException {
+  public Numero valorAbsoluto(Numero numero) throws RemoteException {
     return new NumeroImpl (Math.abs(numero.getValor()));
   };
 
-  public Numero arredondarAcima(Numero numero) throws DivisaoPorZeroException {
+  public Numero arredondarAcima(Numero numero) throws RemoteException {
     return new NumeroImpl (Math.ceil(numero.getValor()));
   };
 
-  public Numero arredondarAbaixo(Numero numero) throws DivisaoPorZeroException {
+  public Numero arredondarAbaixo(Numero numero) throws RemoteException {
     return new NumeroImpl (Math.floor(numero.getValor()));
   };
 
-  public Numero fatorial(int fatorial) throws DivisaoPorZeroException {
+  public Numero fatorial(int fatorial) throws RemoteException {
     int resultado = 1;
     
     for (int i = fatorial; i > 1; i--)
@@ -47,7 +48,7 @@ public class CalculadoraImpl implements Calculadora {
     return new NumeroImpl(resultado);
   };
 
-  public Numero minimo(List<Numero> numeros) throws DivisaoPorZeroException {
+  public Numero minimo(List<Numero> numeros) throws RemoteException {
     List<Double> numerosValores = new ArrayList<Double>();
     
     for (Numero numero : numeros)
@@ -58,15 +59,24 @@ public class CalculadoraImpl implements Calculadora {
     return new NumeroImpl(minimo);
   };
 
-  public Numero maximo(List<Numero> numeros) throws DivisaoPorZeroException {
+  public Numero maximo(List<Numero> numeros) throws RemoteException {
     List<Double> numerosValores = new ArrayList<Double>();
     
     for (Numero numero : numeros)
       numerosValores.add(numero.getValor());
 
-    Double maximo = Collections.min(numerosValores);
+    Double maximo = Collections.max(numerosValores);
     
     return new NumeroImpl(maximo);
+  };
+
+  public Numero media(List<Numero> numeros) throws RemoteException {
+    double somatorio = 0;
+    
+    for (Numero numero : numeros)
+      somatorio += numero.getValor();
+
+    return new NumeroImpl(somatorio / numeros.size());
   };
   
 }
