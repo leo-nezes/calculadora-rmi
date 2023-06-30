@@ -14,10 +14,10 @@ public class ClienteCalculadora {
       Numero num1 = new NumeroImpl(4.3);
       Numero num2 = new NumeroImpl(4.5);
       //Aqui são feitas diversas chamadas remotas
-      Numero soma = calc.soma(num1, num2);
-      Numero sub = calc.subtrai(num1, num2);
-      Numero mult = calc.multiplica(num1, num2);
-      Numero div = calc.divide(num1, num2);
+      Numero soma = calc.somar(num1, num2);
+      Numero sub = calc.subtrair(num1, num2);
+      Numero mult = calc.multiplicar(num1, num2);
+      Numero div = calc.dividir(num1, num2);
       System.out.println("Resultados obtidos do servidor:" +
                         "\n\t+:" + soma.getValor() +
                         "\n\t-:" + sub.getValor()  +
@@ -25,7 +25,7 @@ public class ClienteCalculadora {
                         "\n\t/:" + div.getValor());
 
       try {
-        calc.divide(new NumeroImpl(1), new NumeroImpl(0));
+        calc.dividir(new NumeroImpl(1), new NumeroImpl(0));
       } catch (DivisaoPorZeroException e) {
         System.out.println("Tentou dividir por zero! Esta é uma exceção remota.");
       }
