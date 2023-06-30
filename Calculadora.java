@@ -15,4 +15,6 @@ public interface Calculadora extends Remote {
   public Numero minimo(List<Numero> numeros) throws RemoteException;
   public Numero maximo(List<Numero> numeros) throws RemoteException;
   public Numero media(List<Numero> numeros) throws RemoteException;
+  public Numero absolutoDaDiferenca(Numero minuendo, Numero subtraendo) throws RemoteException;
+  public Numero arredondarParaInteiro(Numero numero) throws RemoteException;
 }

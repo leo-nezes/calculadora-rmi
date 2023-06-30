@@ -77,6 +77,26 @@ public class CalculadoraImpl implements Calculadora {
       somatorio += numero.getValor();
 
     return new NumeroImpl(somatorio / numeros.size());
+  }
+
+  public Numero absolutoDaDiferenca(Numero minuendo, Numero subtraendo) throws RemoteException {
+    Numero resultado = this.subtrair(minuendo, subtraendo);
+
+    return this.valorAbsoluto(resultado);
+  };
+  
+  public Numero arredondarParaInteiro(Numero numero) throws RemoteException {
+    int inteiro = (int) numero.getValor();
+    double decimal = ((numero.getValor() - inteiro) * 10);
+    int primeiraCasaDecimal = (int) decimal;
+    int resultado = 0;
+
+    if ((primeiraCasaDecimal == 0) || (primeiraCasaDecimal > 0 && primeiraCasaDecimal < 5))
+      resultado = inteiro;
+    else if (primeiraCasaDecimal >= 5)
+      resultado = ++inteiro;
+
+    return new NumeroImpl(resultado);
   };
   
 }

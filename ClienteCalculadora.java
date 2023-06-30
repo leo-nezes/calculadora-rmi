@@ -32,6 +32,10 @@ public class ClienteCalculadora {
       Numero minimo = calc.minimo(nums);
       Numero maximo = calc.maximo(nums);
       Numero media = calc.media(nums);
+      Numero absolutoDaDiferenca = calc.absolutoDaDiferenca(num1, num2);
+      Numero arredondar1 = calc.arredondarParaInteiro(num3);
+      Numero arredondar2 = calc.arredondarParaInteiro(new NumeroImpl(6.12));
+      Numero arredondar3 = calc.arredondarParaInteiro(new NumeroImpl(3));
       
       System.out.println("Resultados obtidos do servidor:" +
                         "\n\t+:" + soma.getValor() +
@@ -45,7 +49,12 @@ public class ClienteCalculadora {
                         "\n\tfatorial:" + fatorial.getValor() +
                         "\n\tminimo:" + minimo.getValor() +
                         "\n\tmaximo:" + maximo.getValor() +
-                        "\n\tmedia:" + media.getValor());
+                        "\n\tmedia:" + media.getValor() +
+                        "\n\tabsoluto da diferença:" + absolutoDaDiferenca.getValor() + 
+                        "\n\tarredondar para inteiro:" + arredondar1.getValor() + 
+                        "\n\tarredondar para inteiro:" + arredondar2.getValor() +
+                        "\n\tarredondar para inteiro:" + arredondar3.getValor()
+                      );
 
       try {
         calc.dividir(new NumeroImpl(1), new NumeroImpl(0));
