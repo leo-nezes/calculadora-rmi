@@ -8,4 +8,8 @@ public class NumeroImpl implements Numero {
   public double getValor() {
     return num;
   }
+
+  public double raizQuadrada() {
+        return Math.sqrt(num);
+    }
 }

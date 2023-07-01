@@ -97,6 +97,10 @@ public class CalculadoraImpl implements Calculadora {
       resultado = ++inteiro;
 
     return new NumeroImpl(resultado);
-  };
+  }
   
+  public Numero calculaRaiz(Numero numero ) throws RemoteException{
+    return new NumeroImpl(Math.sqrt(numero.getValor()));
+  }
+
 }

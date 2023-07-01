@@ -10,6 +10,8 @@ public class ClienteCalculadora {
       Registry registry = LocateRegistry.getRegistry(null, 5080);
       // Consulta o registry e obtém o stub para o objeto remoto
       Calculadora calc = (Calculadora) registry.lookup("calculadora");
+      Conversor conversor = (Conversor) registry.lookup("conversor");
+
       // A partir deste momento, cahamadas à Caluladora podem ser
       // feitas como qualquer chamada a métodos
 
@@ -36,7 +38,8 @@ public class ClienteCalculadora {
       Numero arredondar1 = calc.arredondarParaInteiro(num3);
       Numero arredondar2 = calc.arredondarParaInteiro(new NumeroImpl(6.12));
       Numero arredondar3 = calc.arredondarParaInteiro(new NumeroImpl(3));
-      
+      Numero raiz = calc.calculaRaiz(new NumeroImpl(9));
+
       System.out.println("Resultados obtidos do servidor:" +
                         "\n\t+:" + soma.getValor() +
                         "\n\t-:" + sub.getValor()  +
@@ -53,7 +56,8 @@ public class ClienteCalculadora {
                         "\n\tabsoluto da diferença:" + absolutoDaDiferenca.getValor() + 
                         "\n\tarredondar para inteiro:" + arredondar1.getValor() + 
                         "\n\tarredondar para inteiro:" + arredondar2.getValor() +
-                        "\n\tarredondar para inteiro:" + arredondar3.getValor()
+                        "\n\tarredondar para inteiro:" + arredondar3.getValor() +
+                        "\n\traiz Quadrada: " + raiz.getValor() 
                       );
 
       try {
