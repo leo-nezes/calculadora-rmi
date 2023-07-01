@@ -7,10 +7,9 @@ public class ClienteCalculadora {
   public static void main(String[] args) {
     try {
       // Localiza o registry. É possível usar endereço/IP porta
-      Registry registry = LocateRegistry.getRegistry(null, 5080);
+      Registry registry = LocateRegistry.getRegistry(null);
       // Consulta o registry e obtém o stub para o objeto remoto
       Calculadora calc = (Calculadora) registry.lookup("calculadora");
-      Conversor conversor = (Conversor) registry.lookup("conversor");
 
       // A partir deste momento, cahamadas à Caluladora podem ser
       // feitas como qualquer chamada a métodos
@@ -20,6 +19,7 @@ public class ClienteCalculadora {
       Numero num3 = new NumeroImpl(2.56);
       Numero num4 = new NumeroImpl(1.86);
       List<Numero> nums = Arrays.asList(num1, num2, num3, num4);
+      Double indice = 2.0;
 
       //Aqui são feitas diversas chamadas remotas
       Numero soma = calc.somar(num1, num2);
@@ -38,8 +38,9 @@ public class ClienteCalculadora {
       Numero arredondar1 = calc.arredondarParaInteiro(num3);
       Numero arredondar2 = calc.arredondarParaInteiro(new NumeroImpl(6.12));
       Numero arredondar3 = calc.arredondarParaInteiro(new NumeroImpl(3));
-      Numero raiz = calc.calculaRaiz(new NumeroImpl(9));
-
+      Numero raizQuadrada = calc.calculaRaiz(new NumeroImpl(9));
+      Numero radiciacao = calc.radiciacao(new NumeroImpl(16), indice);
+      
       System.out.println("Resultados obtidos do servidor:" +
                         "\n\t+:" + soma.getValor() +
                         "\n\t-:" + sub.getValor()  +
@@ -57,7 +58,8 @@ public class ClienteCalculadora {
                         "\n\tarredondar para inteiro:" + arredondar1.getValor() + 
                         "\n\tarredondar para inteiro:" + arredondar2.getValor() +
                         "\n\tarredondar para inteiro:" + arredondar3.getValor() +
-                        "\n\traiz Quadrada: " + raiz.getValor() 
+                        "\n\traiz Quadrada: " + raizQuadrada.getValor() +
+                        "\n\tradiciação : " + indice + ": " + radiciacao.getValor()
                       );
 
       try {

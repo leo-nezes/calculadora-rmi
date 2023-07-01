@@ -12,4 +12,8 @@ public class NumeroImpl implements Numero {
   public double raizQuadrada() {
         return Math.sqrt(num);
     }
+
+  public double radiciacao(double indice) {
+        return Math.pow(num, 1.0 / indice);
+    }
 }

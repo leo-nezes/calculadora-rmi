@@ -18,4 +18,5 @@ public interface Calculadora extends Remote {
   public Numero absolutoDaDiferenca(Numero minuendo, Numero subtraendo) throws RemoteException;
   public Numero arredondarParaInteiro(Numero numero) throws RemoteException;
   public Numero calculaRaiz(Numero numero) throws RemoteException;
+  public Numero radiciacao(Numero a, double indice) throws RemoteException;
 }

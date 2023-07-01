@@ -103,4 +103,8 @@ public class CalculadoraImpl implements Calculadora {
     return new NumeroImpl(Math.sqrt(numero.getValor()));
   }
 
+  public Numero radiciacao(Numero a, double indice) {
+        return new NumeroImpl(Math.pow(a.getValor(), 1.0 / indice));
+    }
+    
 }
