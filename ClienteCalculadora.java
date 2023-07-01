@@ -40,7 +40,8 @@ public class ClienteCalculadora {
       Numero arredondar3 = calc.arredondarParaInteiro(new NumeroImpl(3));
       Numero raizQuadrada = calc.calculaRaiz(new NumeroImpl(9));
       Numero radiciacao = calc.radiciacao(new NumeroImpl(16), indice);
-      
+      Numero horaSegundo = calc.converterHorasEmSegundos(new NumeroImpl(2));
+
       System.out.println("Resultados obtidos do servidor:" +
                         "\n\t+:" + soma.getValor() +
                         "\n\t-:" + sub.getValor()  +
@@ -59,7 +60,8 @@ public class ClienteCalculadora {
                         "\n\tarredondar para inteiro:" + arredondar2.getValor() +
                         "\n\tarredondar para inteiro:" + arredondar3.getValor() +
                         "\n\traiz Quadrada: " + raizQuadrada.getValor() +
-                        "\n\tradiciação : " + indice + ": " + radiciacao.getValor()
+                        "\n\tradiciação : " + indice + ": " + radiciacao.getValor() +
+                        "\n\t2 horas em segundos: " + horaSegundo.getValor()
                       );
 
       try {

@@ -16,4 +16,8 @@ public class NumeroImpl implements Numero {
   public double radiciacao(double indice) {
         return Math.pow(num, 1.0 / indice);
     }
+
+  public double converterHorasEmSegundos() {
+        return num * 3600; // 1 hora = 3600 segundos
+    }
 }

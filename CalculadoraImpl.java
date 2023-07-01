@@ -106,5 +106,8 @@ public class CalculadoraImpl implements Calculadora {
   public Numero radiciacao(Numero a, double indice) {
         return new NumeroImpl(Math.pow(a.getValor(), 1.0 / indice));
     }
-    
+
+  public Numero converterHorasEmSegundos(Numero a) {
+        return new NumeroImpl(a.getValor() * 3600); // 1 hora = 3600 segundos
+    }
 }
