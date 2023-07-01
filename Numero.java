@@ -5,4 +5,6 @@ public interface Numero extends java.io.Serializable {
   double converterHorasEmSegundos();
   double converterSegundosEmHoras();
   double converterCelsiusParaFahrenheit();
+  double converterKgParaGramas();
+
 }

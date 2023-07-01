@@ -22,5 +22,6 @@ public interface Calculadora extends Remote {
   public Numero converterHorasEmSegundos(Numero a) throws RemoteException;
   public Numero converterSegundosEmHoras(Numero a) throws RemoteException;
   public Numero converterCelsiusParaFahrenheit(Numero a) throws RemoteException;
+  public Numero converterKgParaGramas(Numero a) throws RemoteException;
   
 }

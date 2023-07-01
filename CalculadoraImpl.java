@@ -118,4 +118,8 @@ public class CalculadoraImpl implements Calculadora {
   public Numero converterCelsiusParaFahrenheit(Numero a) {
         return new NumeroImpl((a.getValor() * 9/5) + 32);
     }
-}
+  
+  public Numero converterKgParaGramas(Numero a) {
+        return new NumeroImpl(a.getValor() * 1000); // 1 kg = 1000 g
+    }
+  }

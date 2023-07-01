@@ -28,4 +28,8 @@ public class NumeroImpl implements Numero {
    public double converterCelsiusParaFahrenheit() {
         return (num * 9/5) + 32;
     }
+
+  public double converterKgParaGramas() {
+        return num * 1000;
+    }
 }

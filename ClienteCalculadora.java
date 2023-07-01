@@ -42,7 +42,8 @@ public class ClienteCalculadora {
       Numero radiciacao = calc.radiciacao(new NumeroImpl(16), indice);
       Numero horaSegundo = calc.converterHorasEmSegundos(new NumeroImpl(2));
       Numero segundoHora = calc.converterSegundosEmHoras(new NumeroImpl(7200));
-      Numero celsiusFahrenheit = calc.converterCelsiusParaFahrenheit(new NumeroImpl(25)); 
+      Numero celsiusFahrenheit = calc.converterCelsiusParaFahrenheit(new NumeroImpl(25));
+      Numero kgEmG = calc.converterKgParaGramas(new NumeroImpl(2.5)); 
 
       System.out.println("Resultados obtidos do servidor:" +
                         "\n\t+:" + soma.getValor() +
@@ -65,7 +66,8 @@ public class ClienteCalculadora {
                         "\n\tradiciação : " + indice + ": " + radiciacao.getValor() +
                         "\n\t2 horas em segundos: " + horaSegundo.getValor() + 
                         "\n\t7200 segundos em horas: " + segundoHora.getValor() +
-                        "\n\t25 graus Celsius em Fahrenheit: " + celsiusFahrenheit.getValor()
+                        "\n\t25 graus Celsius em Fahrenheit: " + celsiusFahrenheit.getValor() +
+                        "\n\t2.5 kg em gramas: " + kgEmG.getValor()
                       );
 
       try {
