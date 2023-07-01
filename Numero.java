@@ -3,4 +3,6 @@ public interface Numero extends java.io.Serializable {
   double raizQuadrada();
   double radiciacao(double indice);
   double converterHorasEmSegundos();
+  double converterSegundosEmHoras();
+  double converterCelsiusParaFahrenheit();
 }

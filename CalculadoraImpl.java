@@ -114,4 +114,8 @@ public class CalculadoraImpl implements Calculadora {
   public Numero converterSegundosEmHoras(Numero a) {
         return new NumeroImpl(a.getValor() / 3600);
     }
+
+  public Numero converterCelsiusParaFahrenheit(Numero a) {
+        return new NumeroImpl((a.getValor() * 9/5) + 32);
+    }
 }

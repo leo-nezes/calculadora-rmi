@@ -24,4 +24,8 @@ public class NumeroImpl implements Numero {
   public double converterSegundosEmHoras() {
         return num / 3600; 
     }
+
+   public double converterCelsiusParaFahrenheit() {
+        return (num * 9/5) + 32;
+    }
 }
