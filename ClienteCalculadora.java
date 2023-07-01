@@ -41,6 +41,7 @@ public class ClienteCalculadora {
       Numero raizQuadrada = calc.calculaRaiz(new NumeroImpl(9));
       Numero radiciacao = calc.radiciacao(new NumeroImpl(16), indice);
       Numero horaSegundo = calc.converterHorasEmSegundos(new NumeroImpl(2));
+      Numero segundoHora = calc.converterSegundosEmHoras(new NumeroImpl(7200));
 
       System.out.println("Resultados obtidos do servidor:" +
                         "\n\t+:" + soma.getValor() +
@@ -61,7 +62,8 @@ public class ClienteCalculadora {
                         "\n\tarredondar para inteiro:" + arredondar3.getValor() +
                         "\n\traiz Quadrada: " + raizQuadrada.getValor() +
                         "\n\tradiciação : " + indice + ": " + radiciacao.getValor() +
-                        "\n\t2 horas em segundos: " + horaSegundo.getValor()
+                        "\n\t2 horas em segundos: " + horaSegundo.getValor() + 
+                        "\n\t7200 segundos em horas: " + segundoHora.getValor()
                       );
 
       try {

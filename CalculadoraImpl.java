@@ -108,6 +108,10 @@ public class CalculadoraImpl implements Calculadora {
     }
 
   public Numero converterHorasEmSegundos(Numero a) {
-        return new NumeroImpl(a.getValor() * 3600); // 1 hora = 3600 segundos
+        return new NumeroImpl(a.getValor() * 3600); 
+    }
+
+  public Numero converterSegundosEmHoras(Numero a) {
+        return new NumeroImpl(a.getValor() / 3600);
     }
 }

@@ -18,6 +18,10 @@ public class NumeroImpl implements Numero {
     }
 
   public double converterHorasEmSegundos() {
-        return num * 3600; // 1 hora = 3600 segundos
+        return num * 3600; 
+    }
+
+  public double converterSegundosEmHoras() {
+        return num / 3600; 
     }
 }

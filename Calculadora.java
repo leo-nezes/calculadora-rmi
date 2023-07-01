@@ -20,5 +20,6 @@ public interface Calculadora extends Remote {
   public Numero calculaRaiz(Numero numero) throws RemoteException;
   public Numero radiciacao(Numero a, double indice) throws RemoteException;
   public Numero converterHorasEmSegundos(Numero a) throws RemoteException;
+  public Numero converterSegundosEmHoras(Numero a) throws RemoteException;
   
 }
