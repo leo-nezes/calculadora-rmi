@@ -43,7 +43,10 @@ public class ClienteCalculadora {
       Numero horaSegundo = calc.converterHorasEmSegundos(new NumeroImpl(2));
       Numero segundoHora = calc.converterSegundosEmHoras(new NumeroImpl(7200));
       Numero celsiusFahrenheit = calc.converterCelsiusParaFahrenheit(new NumeroImpl(25));
-      Numero kgEmG = calc.converterKgParaGramas(new NumeroImpl(2.5)); 
+      Numero kgEmG = calc.converterKgParaGramas(new NumeroImpl(2.5));
+      Numero deciBinario = calc.decimalParaBinario(new NumeroImpl(56));
+      Numero hexadecimal = calc.decimalHexadecimal(new NumeroImpl(56));
+      Numero binarioDecimal = calc.binarioDecimal(new NumeroImpl(101010));
 
       System.out.println("Resultados obtidos do servidor:" +
                         "\n\t+:" + soma.getValor() +
@@ -67,7 +70,11 @@ public class ClienteCalculadora {
                         "\n\t2 horas em segundos: " + horaSegundo.getValor() + 
                         "\n\t7200 segundos em horas: " + segundoHora.getValor() +
                         "\n\t25 graus Celsius em Fahrenheit: " + celsiusFahrenheit.getValor() +
-                        "\n\t2.5 kg em gramas: " + kgEmG.getValor()
+                        "\n\t2.5 kg em gramas: " + kgEmG.getValor() +
+                        "\n\tDecimal para binario: " + deciBinario.getValor() +
+                         "\n\tDecimal para hexadecimal: " + hexadecimal.getValor() +
+                         "\n\tbinario para decimal: " + binarioDecimal.getValor()
+                         
                       );
 
       try {

@@ -122,4 +122,26 @@ public class CalculadoraImpl implements Calculadora {
   public Numero converterKgParaGramas(Numero a) {
         return new NumeroImpl(a.getValor() * 1000); // 1 kg = 1000 g
     }
+
+  public Numero decimalParaBinario(Numero a){
+        int decimal = (int) a.getValor();
+        String binario = Integer.toBinaryString(decimal);
+        double valorBinario = Double.parseDouble(binario);
+        return new NumeroImpl(valorBinario);
   }
+
+  public Numero decimalHexadecimal(Numero a){
+        int decimal = (int) a.getValor();
+        String hexadecimal = Integer.toHexString(decimal);
+        double valorDecimal = Double.parseDouble(hexadecimal);
+        return new NumeroImpl(valorDecimal);
+  }
+
+  public  Numero binarioDecimal(Numero binario){
+         int valorBinario = (int) binario.getValor();
+        String valorBinarioString =  Integer.toString(valorBinario);
+        int numeroDecimal = Integer.parseInt(valorBinarioString, 2);
+        System.out.println("O número binário " + valorBinarioString + " em decimal é: " + numeroDecimal);
+         return new NumeroImpl(numeroDecimal);
+  }
+}
