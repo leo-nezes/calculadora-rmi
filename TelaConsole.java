@@ -27,6 +27,9 @@ public class TelaConsole {
                 "18 - Segundos em horas: \n" +
                 "19 - Graus Celsius em Fahrenheit: \n" +
                 "20 - Kg em gramas: \n" +
+                "21 - Decimal para Binario: \n" +
+                "22 - Decimal para Hexadecimal \n" +
+                "23 - Binario para Decimal \n" +
                 "0 - Sair do Cliente");
 
     }

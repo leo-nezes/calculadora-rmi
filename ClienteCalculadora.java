@@ -20,20 +20,21 @@ public class ClienteCalculadora {
       int n;
       int operacao;
 
+
       TelaConsole telaConsole = new TelaConsole();
       String limpaTela = "\033\143";
       boolean program = true;
-      while (program ){
+      while (program ) {
         System.out.print(limpaTela);
         telaConsole.tela();
         operacao = ler.nextInt();
-        switch (operacao){
+        switch (operacao) {
           case 1:
             System.out.print(limpaTela);
             System.out.println("Numero 1: ");
-           double valor1 = ler.nextDouble();
+            double valor1 = ler.nextDouble();
             System.out.println("+ : ");
-           double valor2 = ler.nextDouble();
+            double valor2 = ler.nextDouble();
             Numero soma = calc.somar(new NumeroImpl(valor1), new NumeroImpl(valor2));
             System.out.println("Soma: " + soma.getValor());
             System.out.println("Aperte 1 para continuar");
@@ -125,14 +126,13 @@ public class ClienteCalculadora {
             System.out.print(limpaTela);
             int loop1 = 1;
             List<Numero> numsMinimo = new ArrayList<>();
-            while(loop1 == 1){
+            while (loop1 == 1) {
               System.out.println("Numero para adicionar na lista: ");
               System.out.println("00 - Encerrar loop");
               int numMinimo = ler.nextInt();
-              if (numMinimo != 00){
+              if (numMinimo != 00) {
                 numsMinimo.add(new NumeroImpl(numMinimo));
-              }
-              else {
+              } else {
                 loop1 = 200;
               }
             }
@@ -145,14 +145,13 @@ public class ClienteCalculadora {
             System.out.print(limpaTela);
             int loop2 = 1;
             List<Numero> numsMin = new ArrayList<>();
-            while(loop2 == 1){
+            while (loop2 == 1) {
               System.out.println("Numero para adicionar na lista: ");
               System.out.println("00 - Encerrar loop");
               int numMaximo = ler.nextInt();
-              if (numMaximo != 00){
+              if (numMaximo != 00) {
                 numsMin.add(new NumeroImpl(numMaximo));
-              }
-              else {
+              } else {
                 loop2 = 200;
               }
             }
@@ -165,14 +164,13 @@ public class ClienteCalculadora {
             System.out.print(limpaTela);
             int loop3 = 1;
             List<Numero> numsMedia = new ArrayList<>();
-            while(loop3 == 1){
+            while (loop3 == 1) {
               System.out.println("Número para adicionar na lista: ");
               System.out.println("00 - Encerrar loop");
               int numMedia = ler.nextInt();
-              if (numMedia != 00){
+              if (numMedia != 00) {
                 numsMedia.add(new NumeroImpl(numMedia));
-              }
-              else {
+              } else {
                 loop3 = 200;
               }
             }
@@ -257,6 +255,33 @@ public class ClienteCalculadora {
             System.out.println("Aperte 1 para continuar");
             ler.next();
             break;
+          case 21:
+            System.out.print(limpaTela);
+            System.out.println("Decimal : ");
+            valor1 = ler.nextDouble();
+            Numero deciBinario = calc.decimalParaBinario(new NumeroImpl(valor1));
+            System.out.println("Decimal para binario: " + deciBinario.getValor());
+            System.out.println("Aperte 1 para continuar");
+            ler.next();
+            break;
+          case 22:
+            System.out.print(limpaTela);
+            System.out.println("Decimal : ");
+            valor1 = ler.nextDouble();
+            Numero hexadecimal = calc.decimalHexadecimal(new NumeroImpl(valor1));
+            System.out.println("Decimal para hexadecimal:  " + hexadecimal.getValor());
+            System.out.println("Aperte 1 para continuar");
+            ler.next();
+            break;
+          case 23:
+            System.out.print(limpaTela);
+            System.out.println("Binario : ");
+            valor1 = ler.nextDouble();
+            Numero binarioDecimal = calc.binarioDecimal(new NumeroImpl(valor1));
+            System.out.println("Binario para decimal: " + binarioDecimal.getValor());
+            System.out.println("Aperte 1 para continuar");
+            ler.next();
+            break;
           case 0:
             program = false;
             System.out.println("Programa encerrado.");
@@ -266,7 +291,6 @@ public class ClienteCalculadora {
             break;
         }
       }
-
     } catch (Exception e) {
       System.err.println("Ocorreu um erro no cliente: " + e.toString());
     }

@@ -23,5 +23,7 @@ public interface Calculadora extends Remote {
   public Numero converterSegundosEmHoras(Numero a) throws RemoteException;
   public Numero converterCelsiusParaFahrenheit(Numero a) throws RemoteException;
   public Numero converterKgParaGramas(Numero a) throws RemoteException;
-  
+  public Numero decimalParaBinario(Numero a) throws RemoteException;
+  public Numero decimalHexadecimal(Numero a) throws RemoteException; 
+  public Numero binarioDecimal(Numero binario) throws RemoteException;
 }
