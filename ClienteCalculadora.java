@@ -47,7 +47,7 @@ public class ClienteCalculadora {
             System.out.println("- : ");
             valor2 = ler.nextDouble();
             Numero subtracao = calc.somar(new NumeroImpl(valor1), new NumeroImpl(valor2));
-            System.out.println("Subtração: " + subtracao.getValor());
+            System.out.println("Subtracaoo: " + subtracao.getValor());
             System.out.println("Aperte 1 para continuar");
             ler.next();
             break;
@@ -58,7 +58,7 @@ public class ClienteCalculadora {
             System.out.println("X : ");
             valor2 = ler.nextDouble();
             Numero multiplicar = calc.multiplicar(new NumeroImpl(valor1), new NumeroImpl(valor2));
-            System.out.println("Multiplicação: " + multiplicar);
+            System.out.println("Multiplicacao: " + multiplicar.getValor());
             System.out.println("Aperte 1 para continuar");
             ler.next();
             break;
@@ -70,9 +70,11 @@ public class ClienteCalculadora {
             valor2 = ler.nextDouble();
             try {
               Numero dividir = calc.dividir(new NumeroImpl(valor1), new NumeroImpl(valor2));
-              System.out.println("Dividir: " + dividir);
+              System.out.println("Dividir: " + dividir.getValor());
+              System.out.println("Aperte 1 para continuar");
+              ler.next();
             } catch (DivisaoPorZeroException e) {
-              System.out.println("Tentou dividir por zero! Esta é uma exceção remota.");
+              System.out.println("Tentou dividir por zero! Esta é uma excecao remota.");
             }
             break;
           case 5:
@@ -115,10 +117,10 @@ public class ClienteCalculadora {
             break;
           case 9:
             System.out.print(limpaTela);
-            System.out.println("Numero para arredondar acima: ");
+            System.out.println("Numero para Fatorial: ");
             int numFac = ler.nextInt();
             Numero fatorial = calc.fatorial(numFac);
-            System.out.println("Acima: " + fatorial.getValor());
+            System.out.println("Fatorial: " + fatorial.getValor());
             System.out.println("Aperte 1 para continuar");
             ler.next();
             break;
@@ -156,7 +158,7 @@ public class ClienteCalculadora {
               }
             }
             Numero maximo = calc.maximo(numsMin);
-            System.out.println("Máximo: " + maximo.getValor());
+            System.out.println("Maximo: " + maximo.getValor());
             System.out.println("Aperte 1 para continuar");
             ler.next();
             break;
@@ -165,7 +167,7 @@ public class ClienteCalculadora {
             int loop3 = 1;
             List<Numero> numsMedia = new ArrayList<>();
             while (loop3 == 1) {
-              System.out.println("Número para adicionar na lista: ");
+              System.out.println("Numero para adicionar na lista: ");
               System.out.println("00 - Encerrar loop");
               int numMedia = ler.nextInt();
               if (numMedia != 00) {
@@ -175,7 +177,7 @@ public class ClienteCalculadora {
               }
             }
             Numero media = calc.media(numsMedia);
-            System.out.println("Média: " + media.getValor());
+            System.out.println("Media: " + media.getValor());
             System.out.println("Aperte 1 para continuar");
             ler.next();
             break;
@@ -186,7 +188,7 @@ public class ClienteCalculadora {
             System.out.println("Num 2 : ");
             valor2 = ler.nextDouble();
             Numero absolutoDaDiferenca = calc.absolutoDaDiferenca(new NumeroImpl(valor1), new NumeroImpl(valor2));
-            System.out.println("Absoluto da Diferença: " + absolutoDaDiferenca.getValor());
+            System.out.println("Absoluto da Diferenca: " + absolutoDaDiferenca.getValor());
             System.out.println("Aperte 1 para continuar");
             ler.next();
             break;
@@ -201,7 +203,7 @@ public class ClienteCalculadora {
             break;
           case 15:
             System.out.print(limpaTela);
-            System.out.println("Número : ");
+            System.out.println("Numero : ");
             valor1 = ler.nextDouble();
             Numero raizQuadrada = calc.calculaRaiz(new NumeroImpl(valor1));
             System.out.println("Raiz Quadrada: " + raizQuadrada.getValor());
