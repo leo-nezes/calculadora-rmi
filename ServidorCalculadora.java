@@ -8,10 +8,11 @@ public class ServidorCalculadora {
             CalculadoraImpl calc = new CalculadoraImpl();
 
             // Criamos o stub do objeto que será registrado
-            Calculadora calcStub = (Calculadora) UnicastRemoteObject.exportObject(calc, 0);
+            Calculadora calcStub = (Calculadora) UnicastRemoteObject.exportObject(calc, 5080);
 
             // Registra (binds) os stubs no registry
-            Registry registry = LocateRegistry.getRegistry();
+            //Registry registry = LocateRegistry.getRegistry();
+            Registry registry = LocateRegistry.createRegistry(5080);
             registry.bind("calculadora", calcStub);
 
             System.out.println("Servidor iniciado.");
