@@ -15,43 +15,6 @@ public class ClienteCalculadora {
       String url = "rmi://localhost:5080/calculadora";
       Calculadora calc = (Calculadora) Naming.lookup(url);
 
-      // A partir deste momento, cahamadas à Caluladora podem ser
-      // feitas como qualquer chamada a métodos
-
-      //Numero num1 = new NumeroImpl(2);
-     // Numero num2 = new NumeroImpl(1);
-     // Numero num3 = new NumeroImpl(2.56);
-     // Numero num4 = new NumeroImpl(1.86);
-     // List<Numero> nums = Arrays.asList(num1, num2, num3, num4);
-      Double indice = 2.0;
-      double valor1, valor2;
-
-      //Aqui são feitas diversas chamadas remotas
-      /*
-      Numero soma = calc.somar(num1, num2);
-      Numero sub = calc.subtrair(num1, num2);
-      Numero mult = calc.multiplicar(num1, num2);
-      Numero div = calc.dividir(num1, num2);
-      Numero potencia = calc.potenciar(num1, new NumeroImpl(3));
-      Numero absoluto = calc.valorAbsoluto(num1);
-      Numero acima = calc.arredondarAcima(num3);
-      Numero abaixo = calc.arredondarAbaixo(num4);
-      Numero fatorial = calc.fatorial(5);
-      Numero minimo = calc.minimo(nums);
-      Numero maximo = calc.maximo(nums);
-      Numero media = calc.media(nums);
-      Numero absolutoDaDiferenca = calc.absolutoDaDiferenca(num1, num2);
-      Numero arredondar1 = calc.arredondarParaInteiro(num3);
-      Numero arredondar2 = calc.arredondarParaInteiro(new NumeroImpl(6.12));
-      Numero arredondar3 = calc.arredondarParaInteiro(new NumeroImpl(3));
-      Numero raizQuadrada = calc.calculaRaiz(new NumeroImpl(9));
-      Numero radiciacao = calc.radiciacao(new NumeroImpl(16), indice);
-      Numero horaSegundo = calc.converterHorasEmSegundos(new NumeroImpl(2));
-      Numero segundoHora = calc.converterSegundosEmHoras(new NumeroImpl(7200));
-      Numero celsiusFahrenheit = calc.converterCelsiusParaFahrenheit(new NumeroImpl(25));
-      Numero kgEmG = calc.converterKgParaGramas(new NumeroImpl(2.5));
-
-       */
       //Leitura de dados e tela de comandos
       Scanner ler = new Scanner(System.in);
       int n;
@@ -67,10 +30,10 @@ public class ClienteCalculadora {
         switch (operacao){
           case 1:
             System.out.print(limpaTela);
-            System.out.println("Número 1: ");
-            valor1 = ler.nextDouble();
+            System.out.println("Numero 1: ");
+           double valor1 = ler.nextDouble();
             System.out.println("+ : ");
-            valor2 = ler.nextDouble();
+           double valor2 = ler.nextDouble();
             Numero soma = calc.somar(new NumeroImpl(valor1), new NumeroImpl(valor2));
             System.out.println("Soma: " + soma.getValor());
             System.out.println("Aperte 1 para continuar");
@@ -78,7 +41,7 @@ public class ClienteCalculadora {
             break;
           case 2:
             System.out.print(limpaTela);
-            System.out.println("Número 1: ");
+            System.out.println("Numero 1: ");
             valor1 = ler.nextDouble();
             System.out.println("- : ");
             valor2 = ler.nextDouble();
@@ -89,7 +52,7 @@ public class ClienteCalculadora {
             break;
           case 3:
             System.out.print(limpaTela);
-            System.out.println("Número 1: ");
+            System.out.println("Numero 1: ");
             valor1 = ler.nextDouble();
             System.out.println("X : ");
             valor2 = ler.nextDouble();
@@ -100,7 +63,7 @@ public class ClienteCalculadora {
             break;
           case 4:
             System.out.print(limpaTela);
-            System.out.println("Número 1: ");
+            System.out.println("Numero 1: ");
             valor1 = ler.nextDouble();
             System.out.println("/ : ");
             valor2 = ler.nextDouble();
@@ -113,7 +76,7 @@ public class ClienteCalculadora {
             break;
           case 5:
             System.out.print(limpaTela);
-            System.out.println("Número 1: ");
+            System.out.println("Numero 1: ");
             valor1 = ler.nextDouble();
             System.out.println("Expoente : ");
             valor2 = ler.nextDouble();
@@ -124,18 +87,16 @@ public class ClienteCalculadora {
             break;
           case 6:
             System.out.print(limpaTela);
-            System.out.println("Minuendo: ");
+            System.out.println("Numero : ");
             valor1 = ler.nextDouble();
-            System.out.println("Subtraendo : ");
-            valor2 = ler.nextDouble();
-            Numero absoluto = calc.absolutoDaDiferenca(new NumeroImpl(valor1), new NumeroImpl(valor2));
+            Numero absoluto = calc.valorAbsoluto(new NumeroImpl(valor1));
             System.out.println("Absoluto: " + absoluto.getValor());
             System.out.println("Aperte 1 para continuar");
             ler.next();
             break;
           case 7:
             System.out.print(limpaTela);
-            System.out.println("Número para arredondar acima: ");
+            System.out.println("Numero para arredondar acima: ");
             valor1 = ler.nextDouble();
             Numero arredondarAcima = calc.arredondarAcima(new NumeroImpl(valor1));
             System.out.println("Acima: " + arredondarAcima.getValor());
@@ -144,7 +105,7 @@ public class ClienteCalculadora {
             break;
           case 8:
             System.out.print(limpaTela);
-            System.out.println("Número para arredondar abaixo: ");
+            System.out.println("Numero para arredondar abaixo: ");
             valor1 = ler.nextDouble();
             Numero arredondarAbaixo = calc.arredondarAbaixo(new NumeroImpl(valor1));
             System.out.println("Abaixo: " + arredondarAbaixo.getValor());
@@ -153,10 +114,146 @@ public class ClienteCalculadora {
             break;
           case 9:
             System.out.print(limpaTela);
-            System.out.println("Número para arredondar acima: ");
+            System.out.println("Numero para arredondar acima: ");
             int numFac = ler.nextInt();
             Numero fatorial = calc.fatorial(numFac);
             System.out.println("Acima: " + fatorial.getValor());
+            System.out.println("Aperte 1 para continuar");
+            ler.next();
+            break;
+          case 10:
+            System.out.print(limpaTela);
+            int loop1 = 1;
+            List<Numero> numsMinimo = new ArrayList<>();
+            while(loop1 == 1){
+              System.out.println("Numero para adicionar na lista: ");
+              System.out.println("00 - Encerrar loop");
+              int numMinimo = ler.nextInt();
+              if (numMinimo != 00){
+                numsMinimo.add(new NumeroImpl(numMinimo));
+              }
+              else {
+                loop1 = 200;
+              }
+            }
+            Numero minimo = calc.minimo(numsMinimo);
+            System.out.println("Minimo: " + minimo.getValor());
+            System.out.println("Aperte 1 para continuar");
+            ler.next();
+            break;
+          case 11:
+            System.out.print(limpaTela);
+            int loop2 = 1;
+            List<Numero> numsMin = new ArrayList<>();
+            while(loop2 == 1){
+              System.out.println("Numero para adicionar na lista: ");
+              System.out.println("00 - Encerrar loop");
+              int numMaximo = ler.nextInt();
+              if (numMaximo != 00){
+                numsMin.add(new NumeroImpl(numMaximo));
+              }
+              else {
+                loop2 = 200;
+              }
+            }
+            Numero maximo = calc.maximo(numsMin);
+            System.out.println("Máximo: " + maximo.getValor());
+            System.out.println("Aperte 1 para continuar");
+            ler.next();
+            break;
+          case 12:
+            System.out.print(limpaTela);
+            int loop3 = 1;
+            List<Numero> numsMedia = new ArrayList<>();
+            while(loop3 == 1){
+              System.out.println("Número para adicionar na lista: ");
+              System.out.println("00 - Encerrar loop");
+              int numMedia = ler.nextInt();
+              if (numMedia != 00){
+                numsMedia.add(new NumeroImpl(numMedia));
+              }
+              else {
+                loop3 = 200;
+              }
+            }
+            Numero media = calc.media(numsMedia);
+            System.out.println("Média: " + media.getValor());
+            System.out.println("Aperte 1 para continuar");
+            ler.next();
+            break;
+          case 13:
+            System.out.print(limpaTela);
+            System.out.println("Num 1: ");
+            valor1 = ler.nextDouble();
+            System.out.println("Num 2 : ");
+            valor2 = ler.nextDouble();
+            Numero absolutoDaDiferenca = calc.absolutoDaDiferenca(new NumeroImpl(valor1), new NumeroImpl(valor2));
+            System.out.println("Absoluto da Diferença: " + absolutoDaDiferenca.getValor());
+            System.out.println("Aperte 1 para continuar");
+            ler.next();
+            break;
+          case 14:
+            System.out.print(limpaTela);
+            System.out.println("Numero para arredondar : ");
+            valor1 = ler.nextDouble();
+            Numero arredondar = calc.arredondarParaInteiro(new NumeroImpl(valor1));
+            System.out.println("Arredondar para Inteiro: " + arredondar.getValor());
+            System.out.println("Aperte 1 para continuar");
+            ler.next();
+            break;
+          case 15:
+            System.out.print(limpaTela);
+            System.out.println("Número : ");
+            valor1 = ler.nextDouble();
+            Numero raizQuadrada = calc.calculaRaiz(new NumeroImpl(valor1));
+            System.out.println("Raiz Quadrada: " + raizQuadrada.getValor());
+            System.out.println("Aperte 1 para continuar");
+            ler.next();
+            break;
+          case 16:
+            System.out.print(limpaTela);
+            System.out.println("Num : ");
+            valor1 = ler.nextDouble();
+            System.out.println("Indice : ");
+            valor2 = ler.nextDouble();
+            Numero radiciacao = calc.radiciacao(new NumeroImpl(valor1), valor2);
+            System.out.println("Radiciacao: " + radiciacao.getValor());
+            System.out.println("Aperte 1 para continuar");
+            ler.next();
+            break;
+          case 17:
+            System.out.print(limpaTela);
+            System.out.println("Hora : ");
+            valor1 = ler.nextDouble();
+            Numero horaSegundo = calc.converterHorasEmSegundos(new NumeroImpl(valor1));
+            System.out.println("Hora  em Segundos: " + horaSegundo.getValor());
+            System.out.println("Aperte 1 para continuar");
+            ler.next();
+            break;
+          case 18:
+            System.out.print(limpaTela);
+            System.out.println("Segundo : ");
+            valor1 = ler.nextDouble();
+            Numero segundoHora = calc.converterSegundosEmHoras(new NumeroImpl(valor1));
+            System.out.println("Segundos  em Horas: " + segundoHora.getValor());
+            System.out.println("Aperte 1 para continuar");
+            ler.next();
+            break;
+          case 19:
+            System.out.print(limpaTela);
+            System.out.println("Celsius : ");
+            valor1 = ler.nextDouble();
+            Numero celsiusFahrenheit = calc.converterCelsiusParaFahrenheit(new NumeroImpl(valor1));
+            System.out.println("Celsius  em Fahrenheint: " + celsiusFahrenheit.getValor());
+            System.out.println("Aperte 1 para continuar");
+            ler.next();
+            break;
+          case 20:
+            System.out.print(limpaTela);
+            System.out.println("KG : ");
+            valor1 = ler.nextDouble();
+            Numero kgEmG = calc.converterKgParaGramas(new NumeroImpl(valor1));
+            System.out.println("Kg em g: " + kgEmG.getValor());
             System.out.println("Aperte 1 para continuar");
             ler.next();
             break;
@@ -169,42 +266,7 @@ public class ClienteCalculadora {
             break;
         }
       }
-/*
-      System.out.println("Resultados obtidos do servidor:" +
-                        "\n\t+:" + soma.getValor() +
-                        "\n\t-:" + sub.getValor()  +
-                        "\n\t*:" + mult.getValor() +
-                        "\n\t/:" + div.getValor() + 
-                        "\n\tpotencia:" + potencia.getValor() +
-                        "\n\tabsoluto:" + absoluto.getValor() +
-                        "\n\tacima:" + acima.getValor() +
-                        "\n\tabaixo:" + abaixo.getValor() +
-                        "\n\tfatorial:" + fatorial.getValor() +
-                        "\n\tminimo:" + minimo.getValor() +
-                        "\n\tmaximo:" + maximo.getValor() +
-                        "\n\tmedia:" + media.getValor() +
-                        "\n\tabsoluto da diferença:" + absolutoDaDiferenca.getValor() +
-                        "\n\tarredondar para inteiro:" + arredondar1.getValor() + 
-                        "\n\tarredondar para inteiro:" + arredondar2.getValor() +
-                        "\n\tarredondar para inteiro:" + arredondar3.getValor() +
-                        "\n\traiz Quadrada: " + raizQuadrada.getValor() +
-                        "\n\tradiciação : " + indice + ": " + radiciacao.getValor() +
-                        "\n\t2 horas em segundos: " + horaSegundo.getValor() + 
-                        "\n\t7200 segundos em horas: " + segundoHora.getValor() +
-                        "\n\t25 graus Celsius em Fahrenheit: " + celsiusFahrenheit.getValor() +
-                        "\n\t2.5 kg em gramas: " + kgEmG.getValor()
-                      );
 
-
-
-      try {
-        calc.dividir(new NumeroImpl(1), new NumeroImpl(0));
-      } catch (DivisaoPorZeroException e) {
-        System.out.println("Tentou dividir por zero! Esta é uma exceção remota.");
-      }
-
-
- */
     } catch (Exception e) {
       System.err.println("Ocorreu um erro no cliente: " + e.toString());
     }

@@ -21,14 +21,12 @@ public class TelaConsole {
                 "12 - Media: \n" +
                 "13 - Absoluto da Diferenca: \n" +
                 "14 - Arredondar para Inteiro 1: \n" +
-                "15 - Arredondar para Inteiro 2: \n" +
-                "16 - Arredondar para Inteiro 3: \n" +
-                "17 - Raiz Quadrada: \n" +
-                "18 - Radiciacao: \n" +
-                "19 - 2 horas em segundos: \n" +
-                "20 - 7200 segundos em horas: \n" +
-                "21 - 25 graus Celsius em Fahrenheit: \n" +
-                "22 - 2.5 kg em gramas: \n" +
+                "15 - Raiz Quadrada: \n" +
+                "16 - Radiciacao: \n" +
+                "17 - Horas em segundos: \n" +
+                "18 - Segundos em horas: \n" +
+                "19 - Graus Celsius em Fahrenheit: \n" +
+                "20 - Kg em gramas: \n" +
                 "0 - Sair do Cliente");
 
     }
